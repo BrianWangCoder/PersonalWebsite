@@ -125,11 +125,11 @@ const Hero = () => (
     <div className="relative z-10 space-y-4 max-w-4xl">
       <motion.span initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
         className="inline-block px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-widest border border-tertiary/20">
-        Active Systems Engineer
+        Computer Systems Engineer
       </motion.span>
       <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
         className="text-5xl md:text-7xl font-headline font-bold text-on-surface leading-tight tracking-tight">
-        Architecting the <span className="text-primary">Future of Autonomy.</span>
+        Brian Wang <span className="text-primary"></span>
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
         className="max-w-2xl text-on-surface-variant text-lg md:text-xl leading-relaxed">
@@ -150,7 +150,7 @@ const Hero = () => (
 
 const Competencies = () => {
   const skills = [
-    { name: "Robotic Operating System (ROS2)", value: 92 },
+    { name: "Embedded Systems (Microcontrollers)", value: 92 },
     { name: "Embedded C++ / Systems Programming", value: 88 },
     { name: "AI / Machine Learning Integration", value: 75 },
     { name: "3D CAD Modelling", value: 80 },
