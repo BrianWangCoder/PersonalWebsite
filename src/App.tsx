@@ -190,19 +190,19 @@ const Projects = () => {
     {
       title: "AI Social Robot",
       description: "Built the software and hardware for an animatronic robot that interacts in the real world using LLM technology.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrEFFc9OK9WFkZO6u-TVOfJv3WT8mq8rz01__JzYJ-lh_4oaVNJbeqAJm_gkouk7QSYzZtntuptAm1_2rx29xyRJGWOXHU2rs2x9LJdsdtOYpuackVS9VoAP31TH42FOJntdbvGWvjlcmDFPr6lWzZeGFi-VHTxBZon2YcrayYoFveDx_9BUPlArD95-UEvdq0vlfET2QuLJLDVxGxC4SXDc3T5MsiICuQ_-urWEUD6h-QiNB-3togkyLG-O1n9xNefVIm0z-KkQ",
+      image: "/images/winnie.jpg",
       status: "ACTIVE"
     },
     {
       title: "Biomimicry Walking Robot",
       description: "Built a robot that mimics bio movement using servo motors, controlled via IR communication.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDR7h-ibkNYa7i4W-m-oWArzCj2FFyfVqPiv6N6FsjqgiCXl9gNLo3sxWVoWGlUHYfiMAVS8lRE1-UgaNBvaXYk6caSLW5wLe09n0qqZt43IjGj4I9_qlZ1qll78qPr0RPs_WY236AhtCbn8IOvP2l_256KtXt-WV2hgGQfY4IprS-qBt5W34uOa8DH9N9EKikhji0s_VW5bcUoeW0oYvUCYoHESn6BRuoK7toFou0OscHjlTg",
+      image: "/images/penguin.jpg",
       status: "COMPLETED"
     },
     {
       title: "PID Balancing Robot",
       description: "Designed and built the hardware and software for a robot that self-balances using PID control systems.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDt0N8wLJY17_Q42TeA0oEKGDiTvHC96hmOwwMQBbAp41b4cIfh4ygKfj7bFkSQY0Qb8001OTPP-b2QIJj9p3jk2NOGPIiCYUwKDD7nnW1vQadJGX-Lif9rzK6NXz1QowOcuLcau_bDuHuglMzxcl1DnPA7Pxhot579p4atWCENb4F_uVN6IWo754UEHJ9QdYdcG_udTzxeM4WSFwHspQ4Jjf4dHk-YvFCcOpgDHiukhb06I6LyShjx8VURHX7GwVyOiALqybkX3w",
+      image: "/images/PIDRobot.jpg",
       status: "COMPLETED"
     }
   ];
