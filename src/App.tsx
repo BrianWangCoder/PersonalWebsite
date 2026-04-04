@@ -19,7 +19,7 @@ import {
   MapPin
 } from "lucide-react";
 
-type Page = "home" | "resume" | "projects";
+type Page = "home" | "resume" | "projects" | "work";
 
 // ─── Sidebar ────────────────────────────────────────────────────────────────
 
@@ -38,7 +38,7 @@ const Sidebar = ({ currentPage, onNavigate }: { currentPage: Page; onNavigate: (
 
       <nav className="flex-grow space-y-2">
         <NavItem icon={<LayoutGrid size={20} />} label="Home" active={currentPage === "home"} onClick={() => onNavigate("home")} />
-        <NavItem icon={<Cpu size={20} />} label="Work Experience" onClick={() => {}} />
+        <NavItem icon={<Cpu size={20} />} label="Work Experience" active={currentPage === "work"} onClick={() => onNavigate("work")} />
         <NavItem icon={<Rocket size={20} />} label="Projects" active={currentPage === "projects"} onClick={() => onNavigate("projects")} />
         <NavItem icon={<Terminal size={20} />} label="Skills" onClick={() => {}} />
       </nav>
@@ -84,22 +84,20 @@ const TopBar = ({ currentPage, onNavigate }: { currentPage: Page; onNavigate: (p
       <div className="flex items-center space-x-8">
         <h1 className="text-2xl font-headline font-bold tracking-tighter text-primary">Brian Wang</h1>
         <div className="hidden md:flex space-x-6 text-sm font-medium">
-          <button
-            onClick={() => onNavigate("home")}
-            className={`transition-colors duration-300 pb-1 ${currentPage === "home" ? "text-primary border-b-2 border-primary" : "text-on-surface-variant hover:text-tertiary"}`}
-          >
+          <button onClick={() => onNavigate("home")}
+            className={`transition-colors duration-300 pb-1 ${currentPage === "home" ? "text-primary border-b-2 border-primary" : "text-on-surface-variant hover:text-tertiary"}`}>
             Home
           </button>
-          <button
-            onClick={() => onNavigate("projects")}
-            className={`transition-colors duration-300 pb-1 ${currentPage === "projects" ? "text-primary border-b-2 border-primary" : "text-on-surface-variant hover:text-tertiary"}`}
-          >
+          <button onClick={() => onNavigate("work")}
+            className={`transition-colors duration-300 pb-1 ${currentPage === "work" ? "text-primary border-b-2 border-primary" : "text-on-surface-variant hover:text-tertiary"}`}>
+            Work
+          </button>
+          <button onClick={() => onNavigate("projects")}
+            className={`transition-colors duration-300 pb-1 ${currentPage === "projects" ? "text-primary border-b-2 border-primary" : "text-on-surface-variant hover:text-tertiary"}`}>
             Projects
           </button>
-          <button
-            onClick={() => onNavigate("resume")}
-            className={`transition-colors duration-300 pb-1 ${currentPage === "resume" ? "text-primary border-b-2 border-primary" : "text-on-surface-variant hover:text-tertiary"}`}
-          >
+          <button onClick={() => onNavigate("resume")}
+            className={`transition-colors duration-300 pb-1 ${currentPage === "resume" ? "text-primary border-b-2 border-primary" : "text-on-surface-variant hover:text-tertiary"}`}>
             Resume
           </button>
         </div>
@@ -142,8 +140,7 @@ const Hero = ({ onNavigate }: { onNavigate: (page: Page) => void }) => (
       </motion.p>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
         className="flex space-x-4 pt-6">
-        <button
-          onClick={() => onNavigate("projects")}
+        <button onClick={() => onNavigate("projects")}
           className="primary-gradient text-on-primary px-10 py-4 rounded-lg font-bold shadow-lg hover:brightness-110 active:scale-95 transition-all">
           View Projects
         </button>
@@ -216,8 +213,7 @@ const HomeProjects = ({ onNavigate }: { onNavigate: (page: Page) => void }) => {
     <section className="space-y-6">
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-headline font-bold text-on-surface">Recent Field Operations</h3>
-        <button
-          onClick={() => onNavigate("projects")}
+        <button onClick={() => onNavigate("projects")}
           className="text-primary text-sm font-bold flex items-center space-x-1 hover:underline">
           <span>All Projects</span>
           <ArrowRight size={14} />
@@ -245,6 +241,143 @@ const HomeProjects = ({ onNavigate }: { onNavigate: (page: Page) => void }) => {
   );
 };
 
+// ─── Work Experience Page ─────────────────────────────────────────────────────
+
+const WorkPage = () => {
+  const jobs = [
+    {
+      title: "Research Assistant",
+      company: "CARES",
+      date: "2024 – Present",
+      status: "CURRENT",
+      image: "/images/placeholder.jpg",
+      description: "Research and experiment with various robots, developing and applying programming techniques.",
+      tags: ["Robotics", "Research", "Programming"]
+    },
+    {
+      title: "Robotics Teacher",
+      company: "Cilab",
+      date: "2024 – Present",
+      status: "CURRENT",
+      image: "/images/placeholder.jpg",
+      description: "Teaching robotics skills such as designing, building, coding and problem solving to primary to high school students.",
+      tags: ["Teaching", "Robotics", "Mentoring"]
+    },
+    {
+      title: "Staff Member + Coach",
+      company: "IROC",
+      date: "2024 – 2026",
+      status: "COMPLETED",
+      image: "/images/placeholder.jpg",
+      description: "Robotics coach and staff member for primary and high school students for two international competitions.",
+      tags: ["Coaching", "International", "Competition"]
+    },
+    {
+      title: "Volunteer",
+      company: "NZRO",
+      date: "2024 – 2026",
+      status: "COMPLETED",
+      image: "/images/placeholder.jpg",
+      description: "Volunteered as a staff member for many NZRO robotics competitions held for primary to high school students to compete in.",
+      tags: ["Volunteering", "Robotics", "Competition"]
+    },
+    {
+      title: "Summer Research",
+      company: "CARES",
+      date: "2024 – 2025",
+      status: "COMPLETED",
+      image: "/images/robotsoccer.jpg",
+      description: "Re-designing and building hardware and software for a new robot soccer system to later be used to teach intermediate to high school students coding concepts.",
+      tags: ["Research", "Hardware", "Software"]
+    },
+    {
+      title: "Robot Soccer Club Leader",
+      company: "UOA",
+      date: "2024 – 2025",
+      status: "COMPLETED",
+      image: "/images/background.png",
+      description: "I was a lead coach teaching university and high school students to control robots to play soccer autonomously",
+      tags: ["Research", "Hardware", "Software"]
+    },
+  ];
+
+  const statusColors: Record<string, string> = {
+    CURRENT: "bg-tertiary/20 text-tertiary",
+    COMPLETED: "bg-surface/80 text-tertiary",
+  };
+
+  return (
+    <div className="p-8 space-y-8 max-w-7xl mx-auto w-full">
+      {/* Header */}
+      <div className="space-y-1">
+        <span className="text-[10px] font-mono text-tertiary uppercase tracking-widest">CAREER LOG</span>
+        <h2 className="text-4xl font-headline font-bold text-on-surface">Work Experience</h2>
+        <p className="text-on-surface-variant">A full history of roles, coaching, and research positions.</p>
+      </div>
+
+      {/* Stats row */}
+      <div className="grid grid-cols-3 gap-6">
+        {[
+          { label: "Total Roles", value: "5" },
+          { label: "Current", value: "2" },
+          { label: "Completed", value: "3" },
+        ].map((stat) => (
+          <div key={stat.label} className="bg-surface-container-low border border-outline-variant rounded-xl p-6 text-center">
+            <p className="text-3xl font-headline font-bold text-primary">{stat.value}</p>
+            <p className="text-xs text-on-surface-variant uppercase tracking-widest mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Job cards grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {jobs.map((job, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.08 }}
+            whileHover={{ y: -5 }}
+            className="group bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:border-primary/30 transition-all cursor-pointer flex flex-col"
+          >
+            {/* Image / placeholder */}
+            <div className="h-48 overflow-hidden relative bg-surface-container-high flex items-center justify-center">
+              <img
+                alt={job.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src={job.image}
+                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+              />
+              {/* Fallback icon shown behind image — visible if image fails */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Briefcase size={48} className="text-outline-variant" />
+              </div>
+              <div className={`absolute top-3 right-3 px-2 py-1 backdrop-blur rounded text-[10px] font-bold z-10 ${statusColors[job.status]}`}>
+                {job.status}
+              </div>
+            </div>
+
+            <div className="p-5 space-y-3 flex flex-col flex-grow">
+              <div>
+                <h4 className="font-bold text-primary">{job.title}</h4>
+                <p className="text-xs text-tertiary font-mono mt-0.5">{job.company} · {job.date}</p>
+              </div>
+              <p className="text-xs text-on-surface-variant leading-relaxed flex-grow">{job.description}</p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {job.tags.map((tag) => (
+                  <span key={tag} className="text-[10px] px-2 py-1 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 // ─── Projects Page ────────────────────────────────────────────────────────────
 
 const ProjectsPage = () => {
@@ -258,10 +391,10 @@ const ProjectsPage = () => {
     },
     {
       title: "Robotic Chess System",
-      description: "Lead coach teaching university and high school students to control robots to play soccer autonomously.",
+      description: "Designed and built a robotic chess system using 3D modelling, robotics, and AI.",
       image: "/images/chess.jpg",
       status: "ONGOING",
-      tags: ["3D modelling", "Robotics", "AI"]
+      tags: ["3D Modelling", "Robotics", "AI"]
     },
     {
       title: "PID Balancing Robot",
@@ -300,13 +433,12 @@ const ProjectsPage = () => {
 
   return (
     <div className="p-8 space-y-8 max-w-7xl mx-auto w-full">
-      {/* Header */}
       <div className="space-y-1">
+        <span className="text-[10px] font-mono text-tertiary uppercase tracking-widest">FIELD OPERATIONS</span>
         <h2 className="text-4xl font-headline font-bold text-on-surface">Projects</h2>
         <p className="text-on-surface-variant">A full log of all my robotics and engineering projects.</p>
       </div>
 
-      {/* Stats row */}
       <div className="grid grid-cols-3 gap-6">
         {[
           { label: "Total Projects", value: "6" },
@@ -320,7 +452,6 @@ const ProjectsPage = () => {
         ))}
       </div>
 
-      {/* Project grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <motion.div
@@ -591,6 +722,17 @@ export default function App() {
               <Hero onNavigate={setCurrentPage} />
               <Competencies />
               <HomeProjects onNavigate={setCurrentPage} />
+            </motion.div>
+          ) : currentPage === "work" ? (
+            <motion.div
+              key="work"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex-grow"
+            >
+              <WorkPage />
             </motion.div>
           ) : currentPage === "projects" ? (
             <motion.div
