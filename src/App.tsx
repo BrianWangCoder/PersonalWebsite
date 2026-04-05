@@ -40,12 +40,9 @@ const Sidebar = ({ currentPage, onNavigate }: { currentPage: Page; onNavigate: (
         <NavItem icon={<LayoutGrid size={20} />} label="Home" active={currentPage === "home"} onClick={() => onNavigate("home")} />
         <NavItem icon={<Cpu size={20} />} label="Work Experience" active={currentPage === "work"} onClick={() => onNavigate("work")} />
         <NavItem icon={<Rocket size={20} />} label="Projects" active={currentPage === "projects"} onClick={() => onNavigate("projects")} />
-        <NavItem icon={<Terminal size={20} />} label="Skills" onClick={() => {}} />
       </nav>
 
       <div className="space-y-2 border-t border-outline-variant pt-4">
-        <NavItem icon={<Settings size={18} />} label="Settings" small onClick={() => {}} />
-        <NavItem icon={<BookOpen size={18} />} label="Documentation" small onClick={() => {}} />
         <button
           onClick={() => onNavigate("resume")}
           className="w-full mt-4 primary-gradient text-on-primary font-bold py-2.5 rounded-lg text-sm shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2"
@@ -250,7 +247,7 @@ const WorkPage = () => {
       company: "CARES",
       date: "2024 – Present",
       status: "CURRENT",
-      image: "/images/placeholder.jpg",
+      image: "/images/CARES.jpg",
       description: "Research and experiment with various robots, developing and applying programming techniques.",
       tags: ["Robotics", "Research", "Programming"]
     },
@@ -259,7 +256,7 @@ const WorkPage = () => {
       company: "Cilab",
       date: "2024 – Present",
       status: "CURRENT",
-      image: "/images/placeholder.jpg",
+      image: "/images/Cilab.jpg",
       description: "Teaching robotics skills such as designing, building, coding and problem solving to primary to high school students.",
       tags: ["Teaching", "Robotics", "Mentoring"]
     },
@@ -268,7 +265,7 @@ const WorkPage = () => {
       company: "IROC",
       date: "2024 – 2026",
       status: "COMPLETED",
-      image: "/images/placeholder.jpg",
+      image: "/images/IRO_BUSAN.jpg",
       description: "Robotics coach and staff member for primary and high school students for two international competitions.",
       tags: ["Coaching", "International", "Competition"]
     },
@@ -277,7 +274,7 @@ const WorkPage = () => {
       company: "NZRO",
       date: "2024 – 2026",
       status: "COMPLETED",
-      image: "/images/placeholder.jpg",
+      image: "/images/nzro.jpg",
       description: "Volunteered as a staff member for many NZRO robotics competitions held for primary to high school students to compete in.",
       tags: ["Volunteering", "Robotics", "Competition"]
     },
